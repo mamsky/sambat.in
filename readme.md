@@ -1,4 +1,7 @@
-project-root/
+## 📁 Project Structure
+
+```bash
+sambat-in/
 │
 ├── 📁 app/
 │ ├── 📁 controllers/ ← Logika aplikasi (Controller)
@@ -37,3 +40,5 @@ project-root/
 │ └── web.php
 │
 └── .htaccess ← Redirect semua ke `public/index.php` (untuk Apache)
+
+```

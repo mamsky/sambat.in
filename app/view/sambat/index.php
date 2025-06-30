@@ -95,8 +95,28 @@ if(!isset($_SESSION['user'])){
                 while($rowR = $result->fetch_assoc()){
                     ?>
             <div class="w-full p-2 rounded-md bg-slate-200 my-4">
-                <h3>From: <?= $rowR['name']?></h3>
-                <h1><?= $rowR['reply']?></h1>
+                <div class="flex justify-between">
+                    <div>
+                        <h3>From: <?= $rowR['name']?></h3>
+                        <h1><?= $rowR['reply']?></h1>
+                    </div>
+                    <?php
+                        if($rowR['uId'] == $_SESSION['user']['id']){
+                            ?>
+                    <div>
+                        <form action="app/controller/reply/delete-reply.php" method="POST"
+                            onsubmit="return confirm('Apakah Reply Ini ingin di hapus?')">
+                            <input type="text" name="id" value="<?= $rowR['rId'] ?>" hidden>
+                            <button name="delete"
+                                class="cursor-pointer bg-red-500 hover:bg-red-700 w-full h-full p-4 border rounded-md">X</button>
+                        </form>
+                    </div>
+                    <?php
+                        }
+                    ?>
+
+                </div>
+
             </div>
             <?php
                 }

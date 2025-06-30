@@ -8,7 +8,7 @@ class Reply{
     }
 
     public function getReply($id){
-        $sql = "SELECT auth.name, reply.reply FROM auth INNER JOIN reply ON auth.id = reply.id_user WHERE id_content = $id";
+        $sql = "SELECT auth.id as uId ,auth.name, reply.id as rId, reply.reply FROM auth INNER JOIN reply ON auth.id = reply.id_user WHERE id_content = $id";
         return $this->db->query($sql);
     }
 

@@ -1,3 +1,7 @@
+# Sambat.in
+
+sambat.in is a web-based Q&A platform to accommodate complaints (sambatan) about the world of coding, and provide space for others to answer or respond. Similar to Stack Overflow, but more focused on emotional support and solving everyday life problems while coding.
+
 ## 📁 Project Structure
 
 ```bash

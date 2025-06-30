@@ -1,6 +1,6 @@
 <?php
-if(!isset($_SESSION['user'])){
-        header("location:"."/login");
+    if(!isset($_SESSION['user'])){
+        echo "<script>window.location.href = '/sambat';</script>";
     }
      require_once 'app/model/content.model.php';
      require_once 'app/model/reply.model.php';
@@ -17,8 +17,8 @@ if(!isset($_SESSION['user'])){
 
 <body>
     <?php require 'app/view/layout/navbar.php' ?>
-    <div class='p-8 flex justify-between gap-4'>
-        <div class="w-full border rounded-md p-4">
+    <div class='p-8 flex flex-wrap md:flex-nowrap gap-4'>
+        <div class="w-full border border-r-5 border-b-5 rounded-md p-4">
             <a href="/create-sambat" class="w-full p-2 font-bold bg-blue-500 my-4 rounded-md text-white">Sambatan</a>
             <div class="my-4">
                 <?php 
@@ -34,7 +34,7 @@ if(!isset($_SESSION['user'])){
                 }else{
                     while ($row = $result->fetch_assoc()) {
                         ?>
-                <div class="w-full p-2 rounded-md bg-slate-200 my-4">
+                <div class="w-full p-2 rounded-md bg-slate-200 my-4 border-r-5 border-b-5">
                     <div class="flex justify-between">
                         <div>
                             <a href="?id=<?= $row['id'] ?>">
@@ -75,7 +75,7 @@ if(!isset($_SESSION['user'])){
             $result = $RModel->getReply($id);
             if($id){
                 ?>
-        <div class="flex-left border rounded-md w-full px-2">
+        <div class="flex-left border rounded-md w-full px-2 border-r-5 border-b-5">
             <div class="flex justify-between">
                 <a href="/reply?id=<?= $id?>" class="text-white p-2 font-bold bg-blue-500 my-4 rounded-md">
                     Reply</a>
@@ -94,7 +94,7 @@ if(!isset($_SESSION['user'])){
             <?php
                 while($rowR = $result->fetch_assoc()){
                     ?>
-            <div class="w-full p-2 rounded-md bg-slate-200 my-4">
+            <div class="w-full p-2 rounded-md bg-slate-200 my-4 border-r-5 border-b-5">
                 <div class="flex justify-between">
                     <div>
                         <h3>From: <?= $rowR['name']?></h3>
@@ -116,7 +116,6 @@ if(!isset($_SESSION['user'])){
                     ?>
 
                 </div>
-
             </div>
             <?php
                 }

@@ -1,6 +1,6 @@
 <?php
     if(!isset($_SESSION['user'])){
-        header("location:"."/login");
+        echo "<script>window.location.href = '/login';</script>";
     }
 ?>
 <!DOCTYPE html>
@@ -14,7 +14,6 @@
 
 <body>
     <?php require 'app/view/layout/navbar.php' ?>
-    <?php #print_r($_SESSION['user']['id'])?>
     <div class="relative">
         <img src="public/images/background.png" alt="bg" class="w-full h-screen object-cover max-h-[881px]">
 

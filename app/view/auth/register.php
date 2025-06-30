@@ -1,10 +1,10 @@
 <?php
     if(isset($_SESSION['user'])){
-        header("location:"."/");
+        echo "<script>window.location.href = '/';</script>";
     }
 ?>
 
-<div class="h-screen w-full bg-gradient-to-tl from-sky-800  via-sky-400 to-sky-200 px-20">
+<div class="h-screen w-full bg-gradient-to-tl from-sky-800  via-sky-400 to-sky-200 md:px-20">
     <div class="h-full flex justify-center items-center">
         <content class="w-full mx-2 md:w-md p-4 rounded-md bg-white/50 backdrop-blur-md shadow-xl">
             <h1 class="w-full text-4xl font-bold text-center my-6">Register <span class="text-blue-800">Sambat.in</span>

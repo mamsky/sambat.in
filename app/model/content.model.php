@@ -8,7 +8,11 @@
         }
 
         public function getContent(){
-            $sql = "SELECT * FROM content";
+            $sql = "SELECT auth.id as id_user,auth.name,content.id,content.content FROM auth INNER JOIN content on auth.id = content.id_user";
+            return $this->db->query($sql);
+        }
+        public function getContentById($id){
+            $sql = "SELECT content FROM content WHERE id = $id";
             return $this->db->query($sql);
         }
 
@@ -18,7 +22,7 @@
         }
 
         public function updateContent($id, $content){
-            $sql = "UPDATE content SET content=$content WHERE id= $id";
+            $sql = "UPDATE content SET content='$content' WHERE id= $id";
             return $this->db->query($sql);
         }
 

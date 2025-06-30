@@ -6,8 +6,8 @@
             </a>
         </div>
         <div class="flex gap-4">
-            <a href="/profile" class="p-2 bg-blue-500 hover:bg-blue-700 text-white rounded-md">
-                Profile
+            <a href="/sambat" class="p-2 bg-blue-500 hover:bg-blue-700 text-white rounded-md">
+                Sambat
             </a>
             <form action="app/controller/logout.controller.php" method="POST">
                 <button name="session-destroy"

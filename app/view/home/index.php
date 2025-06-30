@@ -14,7 +14,14 @@
 
 <body>
     <?php require 'app/view/layout/navbar.php' ?>
-    <?php print_r($_SESSION['user'])?>
+    <?php #print_r($_SESSION['user']['id'])?>
+    <div class="relative">
+        <img src="public/images/background.png" alt="bg" class="w-full h-screen object-cover max-h-[881px]">
+
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <h1 class="text-4xl text-white text-center">Welcome <?= $_SESSION['user']['name'] ?></h1>
+        </div>
+    </div>
 </body>
 
 </html>
